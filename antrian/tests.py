@@ -21,7 +21,7 @@ class TestQueue(TestCase):
     def test_queue_page_url_is_exist(self):
         response = Client().get('/queue/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'queue/index.html')
+        self.assertTemplateUsed(response, '/index.html')
 
     def test_tambah_method_url_is_exist(self):
         response = Client().get('/queue/tambah/')
