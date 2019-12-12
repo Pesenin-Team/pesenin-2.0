@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'form',
     'merchant.apps.MerchantConfig',
     'antrian.apps.AntrianConfig',
+    'restAPI.apps.RestapiConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
