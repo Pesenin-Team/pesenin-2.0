@@ -26,4 +26,5 @@ urlpatterns = [
     path('merchant/', include('merchant.urls')),
     path('queue/', include('antrian.urls')),
     path('restapi', include('restAPI.urls')),
+    path('frequently-asked/', include('frequentlyasked.urls')),
 ]

@@ -44,11 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'form',
+    'form.apps.FormConfig',
     'merchant.apps.MerchantConfig',
     'antrian.apps.AntrianConfig',
     'restAPI.apps.RestapiConfig',
     'rest_framework',
+    'frequentlyasked.apps.FrequentlyaskedConfig',
 ]
 
 MIDDLEWARE = [

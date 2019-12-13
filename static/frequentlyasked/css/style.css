@@ -1,0 +1,19 @@
+.accordion-head{
+    background-color: #8BB03E;
+    padding: 1vh;
+    cursor: pointer;
+    color: white;
+    font-size: 3vh;
+    text-align: center;
+    padding: 1vh;
+    font-weight: bold;
+}
+.sentences{
+    font-size: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+.accordion-body{
+    background-color: rgba(221, 238, 201, 0.308);
+    padding: 2vh;
+}
