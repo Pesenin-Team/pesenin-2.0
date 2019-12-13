@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
+from django.db.models import Q
+from django.http import JsonResponse
+
 from .models import Queue
 from merchant.models import Makanan
 # Create your views here.
+
 
 def antri(request):
     if (request.user.is_authenticated):
@@ -10,8 +14,19 @@ def antri(request):
         content = {
             "antrian": queue_list
         }
+
         return render(request, 'queue/index.html', content)
     return render(request, 'queue/index.html',)
+
+
+def display_antrian(request):
+    if (request.method) == "GET":
+        if (request.user.is_authenticated):
+            user = request.user
+            queue_json = Queue.objects.filter(user=user).values(
+                'user', 'nama_makanan', 'status', 'foto')
+            list_queue = list(queue_json)
+            return JsonResponse(list_queue, safe=False)
 
 
 def tambah_antrian(request, pk):
