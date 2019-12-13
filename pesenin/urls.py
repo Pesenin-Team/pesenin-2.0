@@ -25,4 +25,5 @@ urlpatterns = [
     path('contact/', include('form.urls')),
     path('merchant/', include('merchant.urls')),
     path('queue/', include('antrian.urls')),
+    path('restapi', include('restAPI.urls')),
 ]
