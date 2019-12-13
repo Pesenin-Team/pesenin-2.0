@@ -29,17 +29,20 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 d-flex">
                     <!-- Form Search -->
-                    <form class="form-inline" action="{% url 'antrian:search' %}" method="POST">
+                    <!-- <form class="form-inline" id="searchForm" action="{% url 'antrian:search' %}" method="POST"> -->
+                    <form class="form-inline" id="searchForm">
                         {% csrf_token %}
                         <div class="form-group">
-                            <input type="text" class="form-control" name="search" placeholder="Search Antrian">
+                            <input type="text" id="searchText" class="form-control" name="search"
+                                placeholder="Search Antrian">
                         </div>
-                        <button type="submit" class="btn btn-warning ml-1">S</button>
+                        <button type="submit" id="submit" class="btn btn-warning ml-1">submit</button>
                     </form>
                 </div>
             </div>
             {% if user.is_authenticated %}
-            {% for items in antrian %}
+            <div id="antrian"></div>
+            <!-- {% for items in antrian %}
             <div class="card kartu mt-3">
                 <div class="card-header">
                     <strong>A60</strong>
@@ -58,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
+            {% endfor %} -->
             {% else %}
             <h3 class="display-5 font-weight-bold m-auto mt-5">
                 <p class="no-deco text-dark mt-5">Sorry You have to log in to see the queue.</p>
@@ -66,5 +69,6 @@
             {% endif %}
         </div>
     </div>
+
 </body>
 {% endblock content %}

@@ -5,5 +5,6 @@ app_name = 'antrian'
 urlpatterns = [
     path('', views.antri, name='queue'),
     path('tambah/<int:pk>', views.tambah_antrian, name='tambah'),
-    path('search', views.search_antrian, name='search')
+    path('search', views.search_antrian, name='search'),
+    path('get_queue', views.display_antrian, name='display'),
 ]
