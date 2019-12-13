@@ -47,8 +47,6 @@ INSTALLED_APPS = [
     'form.apps.FormConfig',
     'merchant.apps.MerchantConfig',
     'antrian.apps.AntrianConfig',
-    'restAPI.apps.RestapiConfig',
-    'rest_framework',
     'frequentlyasked.apps.FrequentlyaskedConfig',
 ]
 

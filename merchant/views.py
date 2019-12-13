@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from .models import Merchant
 from .models import Makanan
 
@@ -46,3 +47,15 @@ def search_makanan(request):
     except Makanan.DoesNotExist:
         error = "Sorry looks like your food is not here."
         return render(request, 'search_makanan.html', {'error': error})
+
+def display_merchant(request):
+    if (request.method) == "GET":
+        merchant_json = Merchant.objects.all().values('nama_merchant', 'desc', 'link_gambar')
+        list_merchant = list(merchant_json)
+        return JsonResponse(list_merchant, safe=False)
+
+def display_makanan(request):
+    if (request.method) == "GET":
+        makanan_json = Makanan.objects.all().values('merchant', 'nama','deskripsi','foto')
+        list_makanan = list(makanan_json)
+        return JsonResponse(list_makanan, safe=False)

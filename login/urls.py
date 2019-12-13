@@ -10,4 +10,5 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('login/', cas_views.LoginView.as_view(), name='login'),
     path('logout/', cas_views.LogoutView.as_view(), name='logout'),
+    path('show_quotes/', views.display_quotes, name='quotes')
 ]

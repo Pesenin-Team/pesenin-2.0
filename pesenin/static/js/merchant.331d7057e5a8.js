@@ -78,7 +78,7 @@ $(document).ready(function(){
         console.log($('#searchText').val())
         $.ajax({
             method: "GET",
-            url: "https://pesenin2.herokuapp.com/merchant/show_merchant",
+            url: "http://127.0.0.1:8000/restapi/merchant/?format=json",
 
             success: function(data){
                 console.log(data)
