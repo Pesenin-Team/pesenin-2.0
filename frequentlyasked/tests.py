@@ -13,3 +13,7 @@ class FAQUnitTest(TestCase):
     def test_FAQ_url_is_exist(self):
         url = self.client.get(self.faq)
         self.assertEquals(url.status_code, 200)
+
+    def test_FAQ_url_is_render_tempaltes(self):
+        response = self.client.get(self.faq)
+        self.assertTemplateUsed(response, 'frequentlyasked/index.html')
