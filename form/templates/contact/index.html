@@ -20,57 +20,74 @@
 
 
 <body>
-    <div class="container">
-      <div class="row">
-          <div class="col-md-12 col-sm-12 col-9">
-            <h1 class="title">CONTACT US THROUGH :</h1>
-          </div>
-      </div>
-        <div class="container">
+    <div>
+      <div class="container ml-5">
             <div class="row">
-              <div class="col-md-3 col-sm-3 col-3"><br>
-                <a href="mailto:peseninherokuapp@gmail.com" target="_blank">
-                  <img class="img-fluid" src="../../static/img/email.png" alt="Email" width="125" height="125">
-                </a>
-              </div>
-              <div class="col-md-3 col-sm-12 col-12"><br>
-                <p class="contact">Email</p>
-                <p class="contact">peseninherokuapp@gmail.com</p>
-              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <h1 class="display-3 font-weight-bold m-auto">
+                  <p class="no-deco text-warning">Contact Us Through :</p>
+                </h1>
             </div>
+
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-3 col-sm-6 col-6">
+                    <a href="mailto:peseninherokuapp@gmail.com" target="_blank">
+                      <img class="img-fluid" src="../../static/img/email.png" alt="Email" width="125" height="125">
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-sm-12 col-12"><br>
+                    <p class="contact no-deco text-warning"><strong>Email</strong></p>
+                    <a href="mailto:peseninherokuapp@gmail.com" target="_blank">
+                      <p class="contact">peseninherokuapp@gmail.com</p>
+                    </a>
+                  </div>
+                </div>
+                  
+
+                <div class="row">
+                  <div class="col-md-3 col-sm-3 col-3"><br>
+                    <a href="https://www.instagram.com/pesenin_herokuapp/" target="_blank">
+                    <img class="img-fluid" src="../../static/img/ig.png" alt="Instagram" width="125" height="125">
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-sm-12 col-12"><br>
+                    <p class="contact no-deco text-warning"><strong>Instagram</strong></p>
+                    <a href="https://www.instagram.com/pesenin_herokuapp/" target="_blank">
+                      <p class="contact">@pesenin_herokuapp</p>
+                    </a>
+                  </div>
+                </div>
+              </div>  
               
-
+    
+            {% if user.is_authenticated %}
             <div class="row">
-              <div class="col-md-3 col-sm-3 col-3"><br>
-                <a href="https://www.instagram.com/pesenin_herokuapp/" target="_blank">
-                <img class="img-fluid" src="../../static/img/ig.png" alt="Instagram" width="125" height="125">
-                </a>
-              </div>
-              <div class="col-md-3 col-sm-12 col-12"><br>
-                <p class="contact">Instagram</p>
-                <p class="contact">@pesenin_herokuapp</p>
+              <div class="col-md-12 col-sm-12 col-12"><br><br>
+                  <h2 class="title2">Say Something!</h2>  
+                  <p class="teks">Take part on our feedback form</p> 
               </div>
             </div>
-          </div>  
-
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-12"><br><br>
-              <h2 class="title2">SAY SOMETHING!</h2>  
-              <p class="teks">Take part on our feedback form</p> 
+         
+    
+            <div class="container">
+              <div class="row align-items-end">
+                <div class="col-md-3 col-sm-6 col-12">
+                    <a class="btn btn-primary btn-lg" href="{% url 'form:feedbackform' %}" role="button">SUBMIT FORM</a>       
+                </div> 
+              </div>       
           </div>
-        </div>
-     
+          {% endif %}
 
-        <div class="container">
-          <div class="row align-items-end">
-            <div class="col-md-3 col-sm-6 col-12">
-                <a class="btn btn-primary btn-lg" href="{% url 'form:feedbackform' %}" role="button">SUBMIT FORM</a>       
-            </div> 
-          </div>       
+
+
+          </div>
       </div>
     </div>
 
+    
+        
 
-    </div>  
+    
 </body>
 {% endblock content %}

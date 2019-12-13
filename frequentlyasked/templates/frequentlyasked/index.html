@@ -1,0 +1,86 @@
+{% extends 'pesenin/base.html' %}
+
+{% block navbar %}
+{% with current_nav='frequentlyasked' %}
+{{ block.super }}
+{% endwith %}
+{% endblock navbar%}
+
+{% block main_container %}
+{% with vertical_center=True %}
+{{ block.super }}
+{% endwith %}
+{% endblock main_container %}
+
+
+{% load static %}
+{% block custom_styles %}
+{% endblock custom_styles %}
+{% block content %}
+
+<body>
+    <div>
+        <div class="container ml-5">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h1 class="display-3 font-weight-bold m-auto">
+                        <p class="no-deco text-warning FAQ">Frequently Asked Question</p>
+                    </h1>
+                </div>
+            </div><br>
+
+                <div class="align-center">
+                    <!-- <div class="col-lg-6 col-md-12 col-sm-12"> -->
+                        <div class="accordion-head accordion-head1 sub-title">Apa itu Pesenin?
+                            <!-- <img class="arrow1" src="https://i.ibb.co/CBY4ykF/arrow.png" alt="arrow" height="35" width="35"> -->
+                        </div>
+                        <div class="accordion-body display accordion-body1">
+                            <p class="sentences">Pesenin adalah web application untuk memesan makanan di kantin Fasilkom.</p>
+                        </div>
+                    <!-- </div>
+                </div> -->
+
+                <!-- <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12"> -->
+                        <div class="accordion-head accordion-head2 sub-title">Siapa saja yang dapat menggunakan layanan dari Pesenin?
+                            <!-- <img class="arrow1" src="https://i.ibb.co/CBY4ykF/arrow.png" alt="arrow" height="35" width="35"> -->
+                        </div>
+                        <div class="accordion-body display accordion-body2">
+                            <p class="sentences">Pesenin dapat digunakan oleh kalangan civitas akadmeisi UI
+                                sebagai konsumen.
+                            </p>
+                        </div>
+                    <!-- </div>
+                </div> -->
+
+                <!-- <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12"> -->
+                        <div class="accordion-head accordion-head3 sub-title justify">Bagaimana cara memesan makanan dengan Pesenin?
+                            <!-- <div class="col-lg-6 col-md-12 col-sm-12"> -->
+                                <!-- <img class="arrow1" src="https://i.ibb.co/CBY4ykF/arrow.png" alt="arrow" height="35" width="35"> -->
+                            <!-- </div> -->
+                        </div>
+                        <div class="accordion-body display accordion-body3">
+                            <p class="sentences">Login terlebih dahulu untuk dapat memesan makanan.</p>
+                        </div>
+                    <!-- </div>
+                </div> -->
+
+                <!-- <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12"> -->
+                        <div class="accordion-head accordion-head4 sub-title">Apa keuntungan menggunakan layanan dari Pesenin?
+                            <!-- <img class="arrow1" src="https://i.ibb.co/CBY4ykF/arrow.png" alt="arrow" height="35" width="35"> -->
+                        </div>
+                        <div class="accordion-body display accordion-body4">
+                            <p class="sentences">Dapat memesan makanan dengan cepat dan mudah.</p>
+                        </div>
+                    <!-- </div>
+                </div> -->
+
+        
+    </div>
+    </div>
+    
+        
+</body>
+{% endblock content %}

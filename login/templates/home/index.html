@@ -36,10 +36,9 @@
             <div class="col-12 text-center">
                 <h3>Order your favourite food here!
                 </h3>
-                <p>
-                    Now all the services is
-                    on your fingertips.
-                </p>
+                <div id="quotes">
+
+                </div>
             </div>
             <div class="col-12 text-center">
                 <div class="button">
@@ -48,5 +47,28 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+    $(document).ready(function(){
+        $.ajax({
+            method: 'GET',
+            url: "https://pesenin2.herokuapp.com/home/show_quotes/",
+            data: {get_param: 'value'},
+            dataType: 'json',
+            success: function(result){
+                var myVar;
+                var random = Math.floor(Math.random() * 5)
+                let quotesWord = $('#quotes');
+                quotesWord.empty();
+                quotesWord.append(
+                    "<p>" + result[random].quotes + "</p>" 
+                ); 
+            },
+        })
+    })
+    </script>
+
+    
 </body>
 {% endblock content %}

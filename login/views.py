@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from .models import quotes
 
 # Create your views here.
 
@@ -13,6 +15,11 @@ def home(request):
         return render(request, 'home/index.html', context)
     return render(request, 'home/index.html',)
 
+def display_quotes(request):
+    if (request.method) == "GET":
+        quotes_json = quotes.objects.all().values('quotes')
+        list_quotes = list(quotes_json)
+        return JsonResponse(list_quotes, safe=False)
 
 @login_required(login_url='login:login')
 def profile(request):
