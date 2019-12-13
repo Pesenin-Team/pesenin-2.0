@@ -41,6 +41,15 @@ class unitTestFormApp(TestCase):
         form = FieldForm(data={})
         self.assertFalse(form.is_valid())
         self.assertEquals(len(form.errors), 3)
+
+    def test_forms_success_make_models_and_matches(self):
+        data = FeedbackForm.objects.create(
+            Satisfaction ='10',
+        )
+        counting_all_data = FeedbackForm.objects.all().count()
+        self.assertEquals(counting_all_data, 1)
+        self.assertTrue(isinstance(data, FeedbackForm))
+        self.assertEquals(data.__str__(), data.Satisfaction)
     
 
 

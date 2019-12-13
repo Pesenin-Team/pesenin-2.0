@@ -17,3 +17,12 @@
     background-color: rgba(221, 238, 201, 0.308);
     padding: 2vh;
 }
+.FAQ{
+    font-size: 8vh;
+}
+.display{
+    display: none;
+}
+.accordion-head:hover{
+    background-color:rgba(160, 160, 209, 0.514);
+}

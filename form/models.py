@@ -30,4 +30,4 @@ class FeedbackForm(models.Model):
     Comment = models.CharField(max_length = 1000)
 
     def __str__(self):
-        return ("{}.{}".format(self.id, self.Faculty))
+        return ("{}".format(self.Satisfaction))

@@ -12,6 +12,11 @@ ORG_CODE = {}
 with open(settings.SSO_UI_ORG_DETAIL_FILE_PATH, 'r') as ORG_CODE_FILE:
     ORG_CODE.update(json.load(ORG_CODE_FILE))
 
+class quotes(models.Model):
+    quotes = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.quotes
 
 class Profile(models.Model):
     """User Profile model."""
