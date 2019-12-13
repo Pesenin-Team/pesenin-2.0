@@ -6,6 +6,8 @@ router = routers.DefaultRouter()
 router.register(r'/queue', views.QueueViewSet)
 router.register(r'/makanan', views.MakananViewSet)
 router.register(r'/merchant', views.MerchantViewSet)
+router.register(r'/quotes', views.QuotesViewSet)
+
 
 urlpatterns = [
     path('', include(router.urls)),

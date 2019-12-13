@@ -7,7 +7,8 @@ from django.test import TestCase
 from django.urls import reverse
 from django_cas_ng.signals import cas_user_authenticated
 
-from .models import ORG_CODE
+from .models import ORG_CODE, quotes
+
 
 
 class SSOUITest(TestCase):
@@ -119,3 +120,13 @@ class SSOUITest(TestCase):
         content = response.content.decode('utf-8')
         self.assertNotIn('<input type="text"', content)
         self.assertIn('<div class="readonly">', content)
+
+    def test_quotes_make_models_and_matches(self):
+        data = quotes.objects.create(
+            quotes ='Semangat',
+        )
+        counting_all_data = quotes.objects.all().count()
+        self.assertEquals(counting_all_data, 1)
+        self.assertTrue(isinstance(data, quotes))
+        self.assertEquals(data.__str__(), data.quotes)
+    

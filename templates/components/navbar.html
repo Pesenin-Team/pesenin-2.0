@@ -30,6 +30,10 @@
         </li>
         {% else %}
         <li class="mx-2 text-center">
+            <a class="nav-link{% if current_nav == 'frequentlyasked' %} font-weight-bold text-light{% endif %} text-light"
+                href="{% url 'frequentlyasked:frequentlyasked' %}">FAQ</a>
+        </li>
+        <li class="mx-2 text-center">
             <a class="nav-link text-light" href="{% url 'login:login' %}">Login</a>
         </li>
         {% endif %}

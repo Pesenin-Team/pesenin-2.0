@@ -1,7 +1,9 @@
 from django.contrib import admin
 
-from .models import Profile
+from .models import Profile, quotes
 
+
+admin.site.register(quotes)
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
